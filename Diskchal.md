@@ -56,7 +56,7 @@ v/v 773828:	$FAT1
 v/v 773829:	$FAT2
 V/V 773830:	$OrphanFiles
 ```
-4. The `*` next to the address 10 denotes that the file was deleted, but, fortunately, not overwritten.
+4. The `*` next to the address 10 denotes that the file was deleted, but, fortunately, not overwritten(at least not fully).
 5. We now access the contents of this file using the `icat` command:
 ```sh title=icat
 icat -f fat32 stick.img 10 > secret_magic_collection.gz
