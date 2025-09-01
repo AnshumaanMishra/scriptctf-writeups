@@ -37,10 +37,19 @@ $ python check.py
 ```
 
 If we observe,  
-$$127091 - 127075 = 16$$also, 
-$$c = 3$$
-$$ s = 19$$
-$$s - c = 16$$
+```math
+127091 - 127075 = 16
+```
+also, 
+```math
+c = 3
+```
+```math
+s = 19
+```
+```math
+s - c = 16
+```
 Since we know that our flag starts with `scriptCTF{`, let us map `127091` to `s` and use that offset to calculate the flag.
 
 # Python Code:
