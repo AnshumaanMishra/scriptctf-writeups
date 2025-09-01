@@ -40,6 +40,9 @@ secret = xor(dec,key)
 print("Secret received!")
 ```
 
+
+
+
 The Math goes like:
 `enc` = Input converted to bytes
 `key` = random 32 bit integer
