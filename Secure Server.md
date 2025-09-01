@@ -40,49 +40,59 @@ secret = xor(dec,key)
 print("Secret received!")
 ```
 
+## The Math goes like: 
+- `enc` = Input converted to bytes
+- `key` = random 32 bit integer
+- `enc2` = `enc` $\oplus$ `key`
+- `secret` = `dec` $\oplus$ `key`
 
-
-
-The Math goes like:
-`enc` = Input converted to bytes
-`key` = random 32 bit integer
-`enc2` = `enc` $\oplus$ `key`
-`secret` = `dec` $\oplus$ `key`
+  
 Where, $\oplus$(XOR) is defined as
-$$
+```math
 a\oplus b 
 = 
 \begin{cases}
    0 & \text{if } a = b \\
    1 & \text{if } a \neq b
 \end{cases}
-$$
+```
 Now, a property of $\oplus$ is that:
-$$b \oplus b = 0$$
+```math
+b \oplus b = 0
+```
 and 
-$$a \oplus b = b \oplus a$$
+```math
+a \oplus b = b \oplus a
+```
 So,
-$$a \oplus b \oplus b = a$$
+```math
+a \oplus b \oplus b = a
+```
 The Three hex codes are(in order):
 1. `enc`
 2. `enc2`
 3. `dec`
+
 Hence, we can see:
-$$
+```math
 \text{enc} \oplus \text{enc2} \oplus \text{dec}
-$$
-$$= 
+```
+```math
+= 
 \left(\text{enc}  
 \oplus 
 \left(\text{enc}  \oplus \text{key}\right)
 \right)   
 \oplus \text{dec}
-$$
-$$= 
+```
+```math
+= 
 \left( \text{key} \right)   
 \oplus \text{dec}
-$$
-$$ = \text{flag}$$
+```
+```math
+ = \text{flag}
+```
 The Python code for decryption of these can be very easily formulated as 
 ```Python title=solve.py
 import binascii
